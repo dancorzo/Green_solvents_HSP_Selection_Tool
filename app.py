@@ -616,6 +616,8 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
         opacity=0.8,
         symbol='cross'
     ),
+
+    hovertemplate = '<b>%{text}</b> <br>HSP:%{x},%{y},%{y}<extra></extra>' ,
     
     #line=go.scatter.Line(color="gray"),
     showlegend=True)
