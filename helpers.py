@@ -10,7 +10,7 @@ def make_dash_table(selection, solv_hsp):
     for index, row in df_subset.iterrows():
         rows = []
         rows.append(html.Td([row["Name"]]))
-        rows.append(html.Td([html.Img(src=row["Img_URL"])], className="app__banner"))
+        rows.append(html.Td([html.Img(src=row["Img_URL"])]))
         rows.append(html.Td([row["CAS"]]))
         rows.append(
             html.Td([html.A(href=row["SDS_Page"], children="Datasheet", target="_blank")])

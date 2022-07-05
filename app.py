@@ -35,13 +35,13 @@ link_paper = "https://www.omegalabresearch.com"
 
 #distance_hsp = pd.read_csv("data/distance-test.csv", index_col=0)
 
-#solv_hsp = pd.read_csv("data/Solvent_Database_Rev.csv", index_col=0)
+# solv_hsp = pd.read_csv("data/Solvent_Database_Rev.csv", index_col=0)
 
 
 
 #Read from google Sheets
 solv_hsp = pd.read_csv('https://docs.google.com/spreadsheets/d/' + 
-                   '1EwTp0yTYgmwJwOcTNQ0pPyrm9AHnW0JevLYgA3Zp0hM' +
+                   '1OTRwUPxWknziTD1QbreNAssYukj6HKACWiHnu5Olmp4' +
                    '/export?gid=0&format=csv',
                    # Set first column as rownames in data frame
                    index_col=0,
@@ -52,6 +52,12 @@ solv_hsp = pd.read_csv('https://docs.google.com/spreadsheets/d/' +
 
 # Define Starting values
 
+data_top = solv_hsp.head() 
+
+print(data_top)
+
+for col in solv_hsp.columns:
+    print(col)
 
 STARTING_SOLVENT = "d-Limonene"
 SOLVENT_DESCRIPTION = solv_hsp.loc[solv_hsp["Name"] == STARTING_SOLVENT]["Desc"].iloc[0]
@@ -566,7 +572,7 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     xanchor="right",
     x=1
     ), 
-    modebar_orientation='v'
+    modebar_orientation='v', uirevision="Don't change"
     )
 
     # fig_4.add_trace(
@@ -593,11 +599,6 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     #line=go.scatter.Line(color="gray"),
     showlegend=True)
     )
-
-
-  
-    
-
 
     return fig, fig_2, fig_3, fig_4
 
