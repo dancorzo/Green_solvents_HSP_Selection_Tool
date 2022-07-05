@@ -797,13 +797,17 @@ def display_click_data(hoverData):
         raise PreventUpdate
     
     try:
+
+        #This information is from fig4 Update / Do not uncomment
+        #custom_data = ['Name', 'BP', 'LD50', 'SDS_Page','Img_URL','Desc'],
+                
         #print (hoverData)
         point_number=hoverData['points'][0]['pointNumber']
         # print(point_number)
         solvent_name = hoverData['points'][0]['customdata'][0]
-        solv_url= hoverData['points'][0]['customdata'][1]
-        solv_img = hoverData['points'][0]['customdata'][2]
-        solv_desc = hoverData['points'][0]['customdata'][3]
+        solv_url= hoverData['points'][0]['customdata'][3]
+        solv_img = hoverData['points'][0]['customdata'][4]
+        solv_desc = hoverData['points'][0]['customdata'][5]
         # print(solvent_name)
         # print(solv_url)
         # print(solv_img)
