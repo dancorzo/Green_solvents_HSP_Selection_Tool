@@ -485,7 +485,7 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
 
     #Update Distance to Material 2
 
-    fig_2 = px.scatter(dff, x=x_m2, y="distance_to_M2", labels={"LD50": 'LD50 (mg/kg)',"BP":'Boining Point(°C)','distance_to_M2':'Distance to '+ Mat2 + ' (MPa½)'},
+    fig_2 = px.scatter(dff, x=x_m2, y="distance_to_M2", labels={"LD50": 'LD50 (mg/kg)',"BP":'Boiling Point(°C)','distance_to_M2':'Distance to '+ Mat2 + ' (MPa½)'},
                  color="Classification",symbol="Classification", 
                  #template="ggplot2", 
                  hover_name="Name", hover_data=["BP","LD50"], custom_data = ['LD50'], 
@@ -560,9 +560,25 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     
     fig_4 = px.scatter_3d(dff, x="dD", y="dP", z="dH", labels={"BP":'Boining Point(°C)',"dD":'dD (MPa½)', "dP":'dP (MPa½)', "dH":'dH (MPa½)'},
                 color="Classification", 
-                hover_name="Name", hover_data=["BP","LD50"], custom_data = ['Name','SDS_Page','Img_URL','Desc'],
+                custom_data = ['Name', 'BP', 'LD50', 'SDS_Page','Img_URL','Desc'],
+                
+                #custom_data = ['Name','SDS_Page','Img_URL','Desc'],
+                #hover_name="Name", hover_data=["BP","LD50"],
                 #size_max=10, 
                 )
+    
+    #Add Hover template 
+    
+    fig_4.update_traces(
+    hovertemplate = "<br>".join([
+        
+        "<b>%{customdata[0]}</b>",
+        "HSP: %{x}, %{y}, %{z}",
+        "Boiling Point: %{customdata[1]} °C",
+        "LD50: %{customdata[2]} mg/Kg",
+        "<extra></extra>"  #This removes trace name from label
+    ]),
+    )       
 
 
     fig_4.update_layout(legend=dict(
@@ -572,6 +588,11 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     xanchor="right",
     x=1
     ), 
+    # hoverlabel=dict(
+    # bgcolor="white",
+    # font_size=16,
+    # font_family="Rockwell"
+    # ),
     modebar_orientation='v', uirevision="Don't change"
     )
 
