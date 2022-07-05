@@ -480,7 +480,7 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     xanchor="right",
     x=1
     ), 
-    modebar_orientation='v'
+    modebar_orientation='v', uirevision="Don't change"
     )
 
     #Update Distance to Material 2
@@ -498,7 +498,7 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     xanchor="right",
     x=1
     ), 
-    modebar_orientation='v'
+    modebar_orientation='v', uirevision="Don't change"
     )
 
 
@@ -515,7 +515,7 @@ def update_figure(n_clicks, type_M1, type_M2, type_affinity, mat_name, mat_name_
     xanchor="right",
     x=1
     ), 
-    modebar_orientation='v'
+    modebar_orientation='v', uirevision="Don't change"
     )
 
     fig_3.add_annotation(dict(font=dict(color='Black',size=15),
