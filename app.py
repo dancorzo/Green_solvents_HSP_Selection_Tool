@@ -27,7 +27,7 @@ radio_style= {'display': 'inline-block', 'margin-left': '10px','margin-right':'8
 
 #URL of publication
 
-link_paper = "https://www.omegalabresearch.com"
+link_paper = "https://www.nature.com/articles/s41560-022-01167-7"
 
 # Incorporate data into App
 
